@@ -11,7 +11,6 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
-        - 6
         - 7
     - name: Fedora
       versions:
@@ -24,11 +23,12 @@ galaxy_info:
 dependencies:
   - role: amtega.check_platform
     check_platform_distributions:
-      centos: 6
+      centos: 7
       fedora: 27
-      rhel: 6
+      rhel: 7
 
   - role: amtega.packages
+    packages_os:
     packages_python:
       all:
         all:

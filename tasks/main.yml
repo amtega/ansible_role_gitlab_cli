@@ -2,7 +2,9 @@
 # Role tasks
 
 - block:
-    - import_tasks: install.yml
-    - import_tasks: configure.yml
+    - include_tasks: install.yml
+    - include_tasks: configure.yml
   tags:
     - role::gitlab_cli
+    - role::gitlab_cli::install
+    - role::gitlab_cli::configure

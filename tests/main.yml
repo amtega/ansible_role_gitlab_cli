@@ -1,5 +1,4 @@
 ---
-
 # Tasks for testing role
 
 - name: run idempotence test
@@ -7,8 +6,7 @@
   roles:
     - role: amtega.docker_presets
       docker_presets_images_json_query: >-
-        [? starts_with(name, `centos-6`)
-           || starts_with(name, `centos-7`)
+        [? starts_with(name, `centos-7`)
            || starts_with(name, `fedora-27`)
            || starts_with(name, `fedora-28`) ]
 
@@ -21,7 +19,7 @@
   hosts: docker_sandbox_containers
   roles:
     - role: amtega.gitlab_cli
-      gitlab_cli_server_url: https://www.github.com
+      gitlab_cli_api_url: https://api.github.com
       gitlab_cli_api_version: 4
   tags:
     - idempotence

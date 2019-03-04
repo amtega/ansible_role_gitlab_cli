@@ -26,6 +26,8 @@ dependencies:
       centos: 7
       fedora: 27
       rhel: 7
+    tags:
+      - role::gitlab_cli
 
   - role: amtega.packages
     packages_os:
@@ -33,3 +35,5 @@ dependencies:
       all:
         all:
           "python-gitlab>=1.6": latest
+    tags:
+      - role::gitlab_cli

@@ -34,9 +34,7 @@
           value: "{{ gitlab_cli_timeout }}"
 
         - option: ssl_verify
-          value: >-
-            {{ (gitlab_cli_validate_certs == true)
-               | ternary('yes', 'no') }}
+          value: "{{ (gitlab_cli_validate_certs) | ternary('yes', 'no') }}"
       loop_control:
         label: "{{ item.option }}"
   vars:

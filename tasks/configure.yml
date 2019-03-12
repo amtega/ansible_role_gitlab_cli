@@ -2,7 +2,7 @@
 # Role configure tasks
 
 - block:
-    - name: setup gitlab cli server default in config file
+    - name: Setup gitlab cli server default in config file
       ini_file:
         path: "{{ gitlab_cli_config_file }}"
         section: "global"
@@ -12,7 +12,7 @@
         state: present
       when: gitlab_cli_setup_default
 
-    - name: setup gitlab cli server in config file
+    - name: Setup gitlab cli server in config file
       ini_file:
         path: "{{ gitlab_cli_config_file }}"
         section: "{{ gitlab_cli_servername }}"

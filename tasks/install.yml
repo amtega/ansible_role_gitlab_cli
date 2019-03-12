@@ -2,12 +2,12 @@
 # Role install tasks
 
 - block:
-    - name: get installed python-gitlab module info
+    - name: Get installed python-gitlab module info
       command: pip show -f python-gitlab
       register: gitlab_cli_get_info_result
       changed_when: false
 
-    - name: fix insecure request warning in gitlab cli
+    - name: Fix insecure request warning in gitlab cli
       blockinfile:
         path: "{{ base_path }}/{{ relative_binary_path }}"
         insertbefore: "__name__ == '__main__'"

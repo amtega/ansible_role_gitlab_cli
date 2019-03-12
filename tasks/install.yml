@@ -3,7 +3,7 @@
 
 - block:
     - name: get installed python-gitlab module info
-      shell: pip show -f python-gitlab
+      command: pip show -f python-gitlab
       register: gitlab_cli_get_info_result
       changed_when: false
 

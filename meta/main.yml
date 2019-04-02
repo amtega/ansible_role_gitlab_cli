@@ -33,6 +33,16 @@ dependencies:
   - role: amtega.packages
     vars:
       packages_os:
+        centos:
+          all:
+            python-urllib3: present
+        fedora:
+          all:
+            python2-urllib3: present
+            python3-urllib3: present
+        rhel:
+          all:
+            python-urllib3: present
       packages_python:
         all:
           all:

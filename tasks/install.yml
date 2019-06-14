@@ -3,9 +3,10 @@
 
 - block:
     - name: Get installed python-gitlab module info
-      command: pip show -f python-gitlab
+      command: "{{ packages_python_bin_dir }}pip show -f python-gitlab"
       register: gitlab_cli_get_info_result
       changed_when: false
+      failed_when: false
 
     - name: Fix insecure request warning in gitlab cli
       blockinfile:

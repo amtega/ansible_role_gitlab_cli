@@ -10,7 +10,7 @@
         value: "{{ gitlab_cli_servername }}"
         mode: 0600
         state: present
-      when: gitlab_cli_setup_default
+      when: gitlab_cli_setup_default | bool
 
     - name: Setup gitlab cli server in config file
       ini_file:

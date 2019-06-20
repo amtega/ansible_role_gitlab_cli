@@ -5,10 +5,11 @@
   hosts: localhost
   roles:
     - role: amtega.docker_presets
-      docker_presets_images_json_query: >-
-        [? starts_with(name, `centos-7`)
-           || starts_with(name, `fedora-29`)
-           || starts_with(name, `fedora-30`) ]
+      vars:
+        docker_presets_images_json_query: >-
+          [? starts_with(name, `centos-7`)
+             || starts_with(name, `fedora-29`)
+             || starts_with(name, `fedora-30`) ]
 
     - role: amtega.docker_sandbox
       docker_sandbox_state: started
@@ -19,8 +20,9 @@
   hosts: docker_sandbox_containers
   roles:
     - role: amtega.gitlab_cli
-      gitlab_cli_api_url: https://api.github.com
-      gitlab_cli_api_version: 4
+      vars:
+        gitlab_cli_api_url: https://api.github.com
+        gitlab_cli_api_version: 4
   tags:
     - idempotence
 
@@ -28,7 +30,8 @@
   hosts: localhost
   roles:
     - role: amtega.docker_sandbox
-      docker_sandbox_state: absent
+      vars:
+        docker_sandbox_state: absent
   tags:
     - cleanup
     - sandbox

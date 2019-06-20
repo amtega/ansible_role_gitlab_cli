@@ -47,5 +47,7 @@ dependencies:
         all:
           all:
             "python-gitlab>=1.6": latest
+            PyYaml: present
     tags:
       - role::gitlab_cli
+      - role::gitlab_cli::install

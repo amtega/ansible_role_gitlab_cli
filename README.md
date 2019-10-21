@@ -4,7 +4,9 @@ This is an [Ansible](http://www.ansible.com) role to setup GitLab command line c
 
 ## Role Variables
 
-A list of all the default variables for this role is available in `defaults/main.yml`.
+A list of all the default variables for this role is available in `defaults/main.yml`. Therole setup the following facts:
+
+- `gitlab_cli_path`: path to the GitLab command line client
 
 ## Example Playbook
 

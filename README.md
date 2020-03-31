@@ -14,8 +14,7 @@ This is an example playbook:
 
 ``` yaml
 ---
-- name: gitlab_cli role sample
-  hosts: localhost
+- hosts: localhost
   roles:  
     - amtega.gitlab_cli
   vars:    

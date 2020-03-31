@@ -7,7 +7,7 @@ galaxy_info:
   description: Setup GitLab command line client
   company: AMTEGA - Xunta de Galicia
   license: GPLv3 or EUPL
-  min_ansible_version: 2.7
+  min_ansible_version: 2.9
   platforms:
     - name: EL
       versions:
@@ -22,9 +22,27 @@ galaxy_info:
 
 dependencies:
   - role: amtega.check_platform
-    tags:
-      - never
+    vars:
+      check_platform_distributions:
+        centos: 7
+        fedora: 29
+        rhel: 7
 
   - role: amtega.packages
-    tags:
-      - never
+    vars:
+      packages_os:
+        centos:
+          all:
+            python-urllib3: present
+        fedora:
+          all:
+            python2-urllib3: present
+            python3-urllib3: present
+        rhel:
+          all:
+            python-urllib3: present
+      packages_python:
+        all:
+          all:
+            "python-gitlab>=1.6": latest
+            PyYaml: present

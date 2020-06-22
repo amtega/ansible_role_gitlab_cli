@@ -41,7 +41,7 @@
     - name: Setup fact pointing to gitlab_cli binary
       set_fact:
         gitlab_cli_path: >-
-          {{ packages_python_bin_dir | default("") }}/gitlab
+          {{ ansible_facts.packages_python_bin_dir | default("") }}/gitlab
   vars:
     gitlab_cli_servername: >-
       {{ gitlab_cli_api_url | urlsplit('hostname') }}

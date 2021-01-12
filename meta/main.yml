@@ -14,8 +14,8 @@ galaxy_info:
         - 7
     - name: Fedora
       versions:
-        - 29
-        - 30
+        - 32
+        - 33
   galaxy_tags:
     - gitlab
     - cli
@@ -25,7 +25,7 @@ dependencies:
     vars:
       check_platform_distributions:
         centos: 7
-        fedora: 29
+        fedora: 32
         redhat: 7
 
   - role: amtega.packages
@@ -36,7 +36,6 @@ dependencies:
             python-urllib3: present
         fedora:
           all:
-            python2-urllib3: present
             python3-urllib3: present
         redhat:
           all:

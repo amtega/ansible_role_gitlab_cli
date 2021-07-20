@@ -7,8 +7,8 @@
         {{ ansible_facts.packages_python_bin_dir
            | default("") }}pip show -f python-gitlab
       register: gitlab_cli_get_info_result
-      changed_when: false
-      failed_when: false
+      changed_when: no
+      failed_when: no
 
     - name: Fix insecure request warning in gitlab cli
       blockinfile:

@@ -28,3 +28,8 @@ gitlab_cli_setup_default: yes
 # Config file
 
 gitlab_cli_config_file: ~/.python-gitlab.cfg
+
+# Indicate if GitLab CLI install tasks must be performed. To setup only
+# configuration files set it to no
+
+gitlab_cli_install: yes

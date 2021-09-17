@@ -30,6 +30,7 @@ dependencies:
         redhat: 7
 
   - role: amtega.packages
+    when: gitlab_cli_install | bool
     vars:
       packages_os:
         centos:

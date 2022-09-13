@@ -1,7 +1,7 @@
 ---
-# Role configure tasks
 
-- block:
+- name: Configure gitlab_cli
+  block:
     - name: Setup gitlab cli server default in config file
       ini_file:
         path: "{{ gitlab_cli_config_file }}"
@@ -39,7 +39,7 @@
         label: "{{ item.option }}"
 
     - name: Setup fact pointing to gitlab_cli binary
-      set_fact:
+      ansible.builtin.set_fact:
         gitlab_cli_path: >-
           {{ ansible_facts.packages_python_bin_dir | default("") }}/gitlab
   vars:

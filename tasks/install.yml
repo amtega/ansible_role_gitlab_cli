@@ -1,9 +1,9 @@
 ---
-# Role install tasks
 
-- block:
+- name: Install gitlab_cli
+  block:
     - name: Get installed python-gitlab module info
-      command: >-
+      ansible.builtin.command: >-
         {{ ansible_facts.packages_python_bin_dir
            | default("") }}pip show -f python-gitlab
       register: gitlab_cli_get_info_result
@@ -11,7 +11,7 @@
       failed_when: no
 
     - name: Fix insecure request warning in gitlab cli
-      blockinfile:
+      ansible.builtin.blockinfile:
         path: "{{ base_path }}/{{ relative_binary_path }}"
         insertbefore: "__name__ == '__main__'"
         block: |

@@ -1,11 +1,11 @@
 ---
-# Role tasks
 
-- block:
-    - include_tasks: install.yml
+- name: Setup gitlab_cli
+  block:
+    - ansible.builtin.include_tasks: install.yml
       when: gitlab_cli_install | bool
 
-    - include_tasks: configure.yml
+    - ansible.builtin.include_tasks: configure.yml
   tags:
     - role::gitlab_cli
     - role::gitlab_cli::install
